@@ -3,17 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Event, { IEvent } from '@/database/event.model';
 
-// Define route params type for type safety
 type RouteParams = {
     params: {
         slug: string;
     };
 };
 
-/**
- * GET /api/events/[slug]
- * Fetches a single events by its slug
- */
 export async function GET(
     req: NextRequest, { params }: RouteParams): Promise<NextResponse> {
     try {
