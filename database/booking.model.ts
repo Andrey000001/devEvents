@@ -55,7 +55,6 @@ BookingSchema.pre('save', async function (next:HookNextFunction) {
       return next(validationError);
     }
   }
-
   next();
 });
 
